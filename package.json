@@ -1,6 +1,6 @@
 {
   "name": "remove-empty",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Remove empty properties of object",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,15 @@
   },
   "keywords": [
     "agnesorso",
-    "remove empty"
+    "remove",
+    "empty",
+    "object",
+    "undefined",
+    "null",
+    "clean",
+    "property",
+    "array",
+    "nested"
   ],
   "author": "agnesorso",
   "license": "ISC"

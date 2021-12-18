@@ -1,10 +1,12 @@
 # remove-empty
 
 <p>
-Removes empty properties of an object. Property values that are empty, 
+Remove empty properties of an object. Property values that are empty, 
 null, undefined, empty arrays and objects. It also checks and remove those within 
 objects inside objects.
 </p>
+
+<br>
 
 <h2>Installation</h2>
 
