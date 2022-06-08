@@ -1,13 +1,15 @@
 {
   "name": "remove-empty",
   "version": "1.1.1",
-  "description": "Remove empty properties of object",
+  "description": "Remove empty properties of an object and clean its nested objects. You can also modify your object property.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "agnesorso",
+    "remove empty",
+    "custom",
     "remove",
     "empty",
     "object",
@@ -16,8 +18,11 @@
     "clean",
     "property",
     "array",
-    "nested"
+    "nested object",
+    "custom object"
   ],
   "author": "agnesorso",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "github.com/agnesorso/remove-empty-npm",
+  "homepage": "github.com/agnesorso/remove-empty-npm"
 }
