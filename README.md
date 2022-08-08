@@ -34,23 +34,20 @@ const obj = {
             price: 20,
             dessert: {
                 c1: 'halo-halo',
-                c2: 'mango float',
-                c3: {
-                    food: 'adobo'
-                }
+                c2: '',
+                c3: {},
+                dessert: 'mango float'
             }
         },
         opt4: {
             drink: 'sprite',
             price: 5,
-            dessert: {
-                c1: 'fries'
-            }
         }
     }
 };
 </pre>
 
+<h3>Default</h3>
 <p>Here is the typical way of using <code>remove-empty</code> package. </p>
 
 <pre>
@@ -64,38 +61,42 @@ console.log(obj);
          food: 'burger',
          drink: 'coke',
          price: 20,
-         dessert: { c1: 'halo-halo', c2: 'mango float', c3: { food: 'adobo' } }
+         dessert: { 
+                c1: 'halo-halo', 
+                dessert: 'mango float' 
+         }
        },
-       opt4: { drink: 'sprite', price: 5, dessert: { c1: 'fries' } }
+       opt4: { drink: 'sprite', price: 5 }
      }
    }
+
 */
 </pre>
 
-<h3>modify object: remove / customize</h3>
+<h2>Modify Object: remove / customize</h2>
 <p>
 To modify your object, you need to declare an Array with the name of property/ies of your choice.
 </p>
+
+<p>
+In modifying your object you need to put at least three parameters in your <code>removeEmpty</code> variable:
+</p>
+
+<ul>
+<li>First is the Object.</li>
+<li>Second is the Array of your property names.</li>
+<li>Third is the action type</li>
+</ul>
+
+<h2>action type: 'removeProperties'</h2>
+<p>Clean and remove every property of the object that is in the Array.
+Unless the property itself is an object, it will not be removed and will continue checking for similar properties.</p>
 
 <pre>
 const property = ['food', 'dessert'];
 </pre>
 
-<p>
-In customizing your object you need to put at least three parameters in your <code>removeEmpty</code> variable: <br>
-First is the Object. <br>
-Second is the Array of your property names. <br>
-Third is the action type (string): <br>
-</p>
-
-<ul>
-<li>
-<em>'removeProperties'</em>  -  remove and clean every property of the object that is in the Array.
-</li>
-<li>
-<em>'customProperties'</em>  -  clean and only show every property of the object that is in the Array.
-</li>
-</ul>
+<p>Now, we will use the provided object (obj) and property above as an example.</p>
 
 <pre>
 removeEmpty(obj, property, 'removeProperties');
@@ -104,12 +105,22 @@ removeEmpty(obj, property, 'removeProperties');
 console.dir(obj, {depth: null});
 /* {
      selection: {
-       opt3: { drink: 'coke', price: 20 },
+       opt3: { 
+            drink: 'coke',
+            price: 20,
+            dessert: {
+                c1: 'halo-halo'
+            }
+       },
        opt4: { drink: 'sprite', price: 5 }
      }
    }
 */
 </pre>
+
+<h2>action type: 'customProperties'</h2>
+<p>Clean and show every property of the object that is in the Array.
+If the property is not in the array but is an object, it will continue checking for similar properties.</p>
 
 <pre>
 removeEmpty(obj, property, 'customProperties');
@@ -117,10 +128,16 @@ removeEmpty(obj, property, 'customProperties');
 console.dir(obj, {depth: null});
 /* {
      food: 'pizza',
-     selection: {
-       opt3: { food: 'burger', dessert: { c3: { food: 'adobo' } } }
+     selection: { 
+            opt3: {
+                food: 'burger',
+                dessert: {
+                    dessert: 'mango float' 
+                }
+            }
      }
    }
+
 */
 </pre>
 

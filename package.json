@@ -1,13 +1,12 @@
 {
   "name": "remove-empty",
-  "version": "2.0.0",
-  "description": "Remove empty properties of an object and clean its nested objects. You can also modify your object property.",
+  "version": "2.0.2",
+  "description": "Clean up the empty properties of an object and its nested objects. You can also remove or customize the properties of your object.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "agnesorso",
     "remove empty",
     "custom",
     "remove",
@@ -18,8 +17,11 @@
     "clean",
     "property",
     "array",
+    "clean object",
+    "clean array",
     "nested object",
-    "custom object"
+    "custom object",
+    "agnesorso"
   ],
   "author": "agnesorso",
   "license": "ISC",

@@ -6,7 +6,7 @@ ActionType = {
 function removeObject(main, list) {
     for (const key in main){
         for(const prop in list){
-            if(key === list[prop]){
+            if(key === list[prop] && typeof main[key] !== 'object'){
                 delete main[key];
             }
         }
@@ -21,16 +21,17 @@ function removeObject(main, list) {
 
 function customObject(main, list) {
     for (const key in main){
-        let exact;
-        exact = false;
+        let exact = false;
         for(const prop in list){
-            if(key === list[prop] || (typeof main[key] === 'object')){
+            if(key === list[prop] || (key !== list[prop] && (typeof main[key] === 'object'))){
                 exact = true;
             }
         }
+
         if(exact === false){
             delete main[key];
         }
+
         if(typeof main[key] === 'object'){
             customObject(main[key], list);
             if(Object.keys(main[key]).length === 0){
